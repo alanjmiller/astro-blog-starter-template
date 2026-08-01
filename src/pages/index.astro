@@ -1,7 +1,10 @@
 ---
+// Sierra Delta Construction - Homepage
+// Replace this file at: src/pages/index.astro in your GitHub repo
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import ProjectCarousel from '../components/ProjectCarousel.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
@@ -13,38 +16,515 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<!-- HERO SECTION -->
+			<section class="hero">
+				<div class="hero-content">
+					<div class="hero-eyebrow">Placer County · General Building · Electrical</div>
+					<h1>Built with the quiet confidence of thirty years on the job.</h1>
+					<p class="hero-subtitle">
+						Sierra Delta Construction is a Placer County general contractor.
+						We build for public agencies, school districts, and private clients
+						who want their project done once, done right.
+					</p>
+					<div class="hero-actions">
+						<a href="/contact" class="btn-primary">Request a quote</a>
+						<a href="/projects" class="btn-secondary">See our work</a>
+					</div>
+					<div class="hero-credentials">
+						<span>CSLB B License</span>
+						<span class="dot">·</span>
+						<span>C-10 Electrical</span>
+						<span class="dot">·</span>
+						<span>WBE Certified</span>
+						<span class="dot">·</span>
+						<span>SB Certified</span>
+					</div>
+				</div>
+				<div class="hero-image-wrap">
+					<div class="hero-image-placeholder">
+						<!-- Replace with your best jobsite photo -->
+						<span>[ Your best jobsite photo goes here ]</span>
+					</div>
+				</div>
+			</section>
+
+			<!-- ROLLING PROJECT CAROUSEL -->
+			<ProjectCarousel />
+
+			<!-- SERVICES SECTION -->
+			<section class="services">
+				<div class="section-header">
+					<div class="section-eyebrow">What we build</div>
+					<h2>General building and electrical, from the ground up.</h2>
+				</div>
+				<div class="services-grid">
+					<div class="service-card">
+						<div class="service-number">01</div>
+						<h3>Public Works</h3>
+						<p>Placer County facilities, school district projects, state agency work.
+						We know the paperwork, the prevailing wage rules, and the compliance requirements.</p>
+					</div>
+					<div class="service-card">
+						<div class="service-number">02</div>
+						<h3>General Building</h3>
+						<p>New construction, renovations, tenant improvements, and building repairs.
+						Full B License with the experience to back it up.</p>
+					</div>
+					<div class="service-card">
+						<div class="service-number">03</div>
+						<h3>Electrical (C-10)</h3>
+						<p>Commercial electrical, service upgrades, generator installation,
+						and electrical repairs. Licensed and code-compliant.</p>
+					</div>
+					<div class="service-card">
+						<div class="service-number">04</div>
+						<h3>Design-Build</h3>
+						<p>Single-source accountability from planning through completion.
+						One team, one contract, one point of responsibility.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- VIDEO SECTION -->
+			<section class="video-section">
+				<div class="section-header">
+					<div class="section-eyebrow">See a project come together</div>
+					<h2>Time-lapse from the field.</h2>
+				</div>
+				<div class="video-container">
+					<div class="video-placeholder">
+						<!-- 
+						REPLACE THIS with a real video embed. Two easy options:
+						
+						OPTION 1 - YouTube video:
+						<iframe 
+							src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+							title="Sierra Delta Construction Project"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen>
+						</iframe>
+						
+						OPTION 2 - Self-hosted video (put file in /public/videos/):
+						<video controls poster="/videos/project-poster.jpg">
+							<source src="/videos/project-timelapse.mp4" type="video/mp4">
+							Your browser does not support video.
+						</video>
+						-->
+						<div class="video-placeholder-inner">
+							<div class="play-icon">▶</div>
+							<p>[ Your project video goes here ]</p>
+							<p class="video-note">YouTube embed or MP4 file — instructions in the code</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- CERTIFICATIONS BANNER -->
+			<section class="certifications">
+				<div class="cert-content">
+					<h2>Certified. Licensed. Bonded. Insured.</h2>
+					<p>Sierra Delta Construction is certified to bid on public contracts across California.
+					When a prime contractor needs a WBE or SB subcontractor to meet participation goals,
+					we're the call.</p>
+					<div class="cert-badges">
+						<div class="cert-badge">
+							<div class="badge-title">CSLB License</div>
+							<div class="badge-detail">General Building (B) · Electrical (C-10)</div>
+						</div>
+						<div class="cert-badge">
+							<div class="badge-title">WBE</div>
+							<div class="badge-detail">Woman-Owned Business Enterprise</div>
+						</div>
+						<div class="cert-badge">
+							<div class="badge-title">SB / SB-PW</div>
+							<div class="badge-detail">California Small Business Certified</div>
+						</div>
+						<div class="cert-badge">
+							<div class="badge-title">Insured</div>
+							<div class="badge-detail">$2M General Liability · Bonded</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- CTA SECTION -->
+			<section class="cta">
+				<div class="cta-content">
+					<h2>Have a project? Let's talk.</h2>
+					<p>Whether you're a public agency issuing an RFP, a prime contractor looking for
+					a certified subcontractor, or a private client with a job to build — reach out.</p>
+					<div class="cta-actions">
+						<a href="/contact" class="btn-primary">Get in touch</a>
+						<a href="mailto:bids@sierradeltaconstruction.com" class="btn-secondary">
+							bids@sierradeltaconstruction.com
+						</a>
+					</div>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	/* --- HERO SECTION --- */
+	.hero {
+		display: grid;
+		grid-template-columns: 1.1fr 1fr;
+		gap: 4rem;
+		align-items: center;
+		padding: 6rem 2rem 4rem;
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+	
+	.hero-eyebrow {
+		font-size: 0.85rem;
+		font-weight: 600;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		color: #B8734A;
+		margin-bottom: 1.5rem;
+	}
+	
+	.hero h1 {
+		font-family: Georgia, serif;
+		font-size: 3.5rem;
+		font-weight: 700;
+		line-height: 1.1;
+		color: #1F1F1F;
+		margin: 0 0 1.5rem 0;
+		letter-spacing: -0.02em;
+	}
+	
+	.hero-subtitle {
+		font-size: 1.15rem;
+		line-height: 1.6;
+		color: #4A4A4A;
+		margin-bottom: 2.5rem;
+		max-width: 540px;
+	}
+	
+	.hero-actions {
+		display: flex;
+		gap: 1rem;
+		margin-bottom: 2.5rem;
+		flex-wrap: wrap;
+	}
+	
+	.btn-primary, .btn-secondary {
+		display: inline-block;
+		padding: 0.9rem 1.8rem;
+		font-size: 0.95rem;
+		font-weight: 600;
+		text-decoration: none;
+		border-radius: 2px;
+		transition: all 0.2s ease;
+	}
+	
+	.btn-primary {
+		background: #2A2A2E;
+		color: #F5F1E8;
+		border: 2px solid #2A2A2E;
+	}
+	
+	.btn-primary:hover {
+		background: #B8734A;
+		border-color: #B8734A;
+	}
+	
+	.btn-secondary {
+		background: transparent;
+		color: #2A2A2E;
+		border: 2px solid #2A2A2E;
+	}
+	
+	.btn-secondary:hover {
+		background: #2A2A2E;
+		color: #F5F1E8;
+	}
+	
+	.hero-credentials {
+		display: flex;
+		gap: 0.8rem;
+		font-size: 0.85rem;
+		color: #6B6B6B;
+		font-weight: 500;
+		letter-spacing: 0.05em;
+		flex-wrap: wrap;
+	}
+	
+	.hero-credentials .dot {
+		color: #B8734A;
+	}
+	
+	.hero-image-placeholder {
+		background: linear-gradient(135deg, #2A2A2E 0%, #4A4A4E 100%);
+		border-radius: 4px;
+		height: 500px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #F5F1E8;
+		font-family: 'Courier New', monospace;
+		font-size: 0.9rem;
+		padding: 2rem;
+		text-align: center;
+		box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+	}
+	
+	/* --- SECTIONS --- */
+	section {
+		padding: 5rem 2rem;
+	}
+	
+	.section-header {
+		max-width: 1400px;
+		margin: 0 auto 3rem;
+	}
+	
+	.section-eyebrow {
+		font-size: 0.85rem;
+		font-weight: 600;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		color: #B8734A;
+		margin-bottom: 1rem;
+	}
+	
+	.section-header h2 {
+		font-family: Georgia, serif;
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: #1F1F1F;
+		margin: 0;
+		letter-spacing: -0.01em;
+		max-width: 720px;
+	}
+	
+	/* --- SERVICES --- */
+	.services {
+		background: #F5F1E8;
+	}
+	
+	.services-grid {
+		max-width: 1400px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 2rem;
+	}
+	
+	.service-card {
+		background: white;
+		padding: 2.5rem 2rem;
+		border-radius: 4px;
+		border-top: 3px solid #B8734A;
+	}
+	
+	.service-number {
+		font-family: Georgia, serif;
+		font-size: 2rem;
+		font-weight: 700;
+		color: #B8734A;
+		margin-bottom: 0.5rem;
+	}
+	
+	.service-card h3 {
+		font-family: Georgia, serif;
+		font-size: 1.4rem;
+		color: #1F1F1F;
+		margin: 0 0 1rem 0;
+	}
+	
+	.service-card p {
+		font-size: 0.95rem;
+		line-height: 1.6;
+		color: #4A4A4A;
+		margin: 0;
+	}
+	
+	/* --- VIDEO SECTION --- */
+	.video-section {
+		background: #1F1F1F;
+		color: #F5F1E8;
+	}
+	
+	.video-section .section-eyebrow {
+		color: #B8734A;
+	}
+	
+	.video-section h2 {
+		color: #F5F1E8;
+	}
+	
+	.video-container {
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+	
+	.video-placeholder {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		background: #2A2A2E;
+		border-radius: 4px;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.video-placeholder iframe,
+	.video-placeholder video {
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+	
+	.video-placeholder-inner {
+		text-align: center;
+		color: #6B6B6B;
+	}
+	
+	.play-icon {
+		font-size: 4rem;
+		color: #B8734A;
+		margin-bottom: 1rem;
+	}
+	
+	.video-note {
+		font-size: 0.85rem;
+		margin-top: 0.5rem;
+		font-family: 'Courier New', monospace;
+	}
+	
+	/* --- CERTIFICATIONS --- */
+	.certifications {
+		background: #F5F1E8;
+	}
+	
+	.cert-content {
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+	
+	.cert-content h2 {
+		font-family: Georgia, serif;
+		font-size: 2.5rem;
+		color: #1F1F1F;
+		margin: 0 0 1rem 0;
+	}
+	
+	.cert-content > p {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		color: #4A4A4A;
+		max-width: 720px;
+		margin-bottom: 3rem;
+	}
+	
+	.cert-badges {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1.5rem;
+	}
+	
+	.cert-badge {
+		background: white;
+		padding: 1.5rem;
+		border-left: 3px solid #B8734A;
+	}
+	
+	.badge-title {
+		font-family: Georgia, serif;
+		font-size: 1.3rem;
+		font-weight: 700;
+		color: #1F1F1F;
+		margin-bottom: 0.3rem;
+	}
+	
+	.badge-detail {
+		font-size: 0.85rem;
+		color: #6B6B6B;
+	}
+	
+	/* --- CTA --- */
+	.cta {
+		background: #2A2A2E;
+		color: #F5F1E8;
+		text-align: center;
+	}
+	
+	.cta-content {
+		max-width: 720px;
+		margin: 0 auto;
+	}
+	
+	.cta h2 {
+		font-family: Georgia, serif;
+		font-size: 2.5rem;
+		margin: 0 0 1rem 0;
+	}
+	
+	.cta p {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		margin-bottom: 2.5rem;
+		opacity: 0.9;
+	}
+	
+	.cta-actions {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	
+	.cta .btn-primary {
+		background: #B8734A;
+		border-color: #B8734A;
+	}
+	
+	.cta .btn-primary:hover {
+		background: #F5F1E8;
+		color: #2A2A2E;
+		border-color: #F5F1E8;
+	}
+	
+	.cta .btn-secondary {
+		color: #F5F1E8;
+		border-color: #F5F1E8;
+	}
+	
+	.cta .btn-secondary:hover {
+		background: #F5F1E8;
+		color: #2A2A2E;
+	}
+	
+	/* --- RESPONSIVE --- */
+	@media (max-width: 900px) {
+		.hero {
+			grid-template-columns: 1fr;
+			padding: 3rem 1.5rem;
+			gap: 2rem;
+		}
+		
+		.hero h1 {
+			font-size: 2.2rem;
+		}
+		
+		.hero-image-placeholder {
+			height: 300px;
+		}
+		
+		.section-header h2, .cert-content h2, .cta h2 {
+			font-size: 1.8rem;
+		}
+		
+		section {
+			padding: 3rem 1.5rem;
+		}
+	}
+</style>
