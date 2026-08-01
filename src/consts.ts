@@ -1,5 +1,5 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
+// Sierra Delta Construction - Site Constants
+// Replace this file at: src/consts.ts in your GitHub repo
 
-export const SITE_TITLE = "Astro Blog";
-export const SITE_DESCRIPTION = "Welcome to my website!";
+export const SITE_TITLE = 'Sierra Delta Construction';
+export const SITE_DESCRIPTION = 'Placer County general contractor. General building, electrical, public works. Licensed, bonded, insured. WBE and SB certified.';
