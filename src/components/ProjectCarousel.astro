@@ -1,1 +1,282 @@
+---
+// Rolling Project Carousel Component
+// This creates an auto-scrolling carousel of past projects
+// Place this file at: src/components/ProjectCarousel.astro
 
+// Add or edit your projects here. When you have real photos, replace the placeholder URLs.
+// Photos should go in /public/projects/ folder in your repo.
+const projects = [
+	{
+		title: "Placer County Facility Improvements",
+		category: "Public Works",
+		year: "2025",
+		image: "/projects/project-1.jpg", // Replace with real photo
+	},
+	{
+		title: "Auburn Community Center Renovation",
+		category: "General Building",
+		year: "2025",
+		image: "/projects/project-2.jpg",
+	},
+	{
+		title: "Roseville Electrical Service Upgrade",
+		category: "C-10 Electrical",
+		year: "2024",
+		image: "/projects/project-3.jpg",
+	},
+	{
+		title: "Rocklin School District — HVAC Replacement",
+		category: "Public Works",
+		year: "2024",
+		image: "/projects/project-4.jpg",
+	},
+	{
+		title: "Foresthill Transfer Station",
+		category: "General Building",
+		year: "2024",
+		image: "/projects/project-5.jpg",
+	},
+	{
+		title: "Lincoln Municipal Building Repairs",
+		category: "General Building",
+		year: "2023",
+		image: "/projects/project-6.jpg",
+	},
+];
+---
+
+<section class="carousel-section">
+	<div class="carousel-header">
+		<div class="section-eyebrow">Recent projects</div>
+		<h2>Work we've delivered.</h2>
+	</div>
+	
+	<div class="carousel-wrapper">
+		<div class="carousel-track" id="carousel-track">
+			{/* Render projects twice for seamless infinite scroll */}
+			{[...projects, ...projects].map((project, i) => (
+				<div class="project-card">
+					<div class="project-image">
+						{/* Placeholder gradient - replace with real image */}
+						<div class="image-placeholder">
+							<span class="placeholder-text">[ Project Photo ]</span>
+							<span class="placeholder-filename">{project.image}</span>
+						</div>
+						{/* 
+							When you have real photos, uncomment this line and delete the placeholder above:
+							<img src={project.image} alt={project.title} />
+						*/}
+					</div>
+					<div class="project-info">
+						<div class="project-category">{project.category} · {project.year}</div>
+						<div class="project-title">{project.title}</div>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+	
+	<div class="carousel-controls">
+		<button class="carousel-btn" id="carousel-pause" aria-label="Pause carousel">
+			<span class="pause-icon">⏸</span>
+			<span class="play-icon" style="display:none;">▶</span>
+		</button>
+	</div>
+</section>
+
+<style>
+	.carousel-section {
+		padding: 5rem 0;
+		background: white;
+		overflow: hidden;
+	}
+	
+	.carousel-header {
+		max-width: 1400px;
+		margin: 0 auto 3rem;
+		padding: 0 2rem;
+	}
+	
+	.section-eyebrow {
+		font-size: 0.85rem;
+		font-weight: 600;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		color: #B8734A;
+		margin-bottom: 1rem;
+	}
+	
+	.carousel-header h2 {
+		font-family: Georgia, serif;
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: #1F1F1F;
+		margin: 0;
+	}
+	
+	.carousel-wrapper {
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+	}
+	
+	.carousel-track {
+		display: flex;
+		gap: 2rem;
+		animation: scroll 40s linear infinite;
+		width: max-content;
+		padding: 1rem 2rem;
+	}
+	
+	.carousel-track.paused {
+		animation-play-state: paused;
+	}
+	
+	@keyframes scroll {
+		0% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+	
+	.project-card {
+		flex: 0 0 380px;
+		background: #F5F1E8;
+		border-radius: 4px;
+		overflow: hidden;
+		transition: transform 0.3s ease;
+	}
+	
+	.project-card:hover {
+		transform: translateY(-4px);
+	}
+	
+	.project-image {
+		width: 100%;
+		height: 260px;
+		background: linear-gradient(135deg, #2A2A2E 0%, #4A4A4E 100%);
+		position: relative;
+		overflow: hidden;
+	}
+	
+	.project-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	
+	.image-placeholder {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color: #F5F1E8;
+		text-align: center;
+		padding: 1rem;
+	}
+	
+	.placeholder-text {
+		font-family: Georgia, serif;
+		font-size: 1.1rem;
+		margin-bottom: 0.5rem;
+	}
+	
+	.placeholder-filename {
+		font-family: 'Courier New', monospace;
+		font-size: 0.75rem;
+		opacity: 0.6;
+	}
+	
+	.project-info {
+		padding: 1.5rem;
+	}
+	
+	.project-category {
+		font-size: 0.8rem;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: #B8734A;
+		margin-bottom: 0.5rem;
+	}
+	
+	.project-title {
+		font-family: Georgia, serif;
+		font-size: 1.2rem;
+		color: #1F1F1F;
+		line-height: 1.3;
+	}
+	
+	.carousel-controls {
+		display: flex;
+		justify-content: center;
+		padding-top: 2rem;
+	}
+	
+	.carousel-btn {
+		background: transparent;
+		border: 2px solid #2A2A2E;
+		color: #2A2A2E;
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		font-size: 1rem;
+		cursor: pointer;
+		transition: all 0.2s ease;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.carousel-btn:hover {
+		background: #2A2A2E;
+		color: #F5F1E8;
+	}
+	
+	@media (max-width: 900px) {
+		.carousel-header h2 {
+			font-size: 1.8rem;
+		}
+		
+		.project-card {
+			flex: 0 0 280px;
+		}
+		
+		.project-image {
+			height: 200px;
+		}
+	}
+	
+	/* Respect user preference for reduced motion */
+	@media (prefers-reduced-motion: reduce) {
+		.carousel-track {
+			animation-duration: 120s;
+		}
+	}
+</style>
+
+<script>
+	// Pause/play carousel button
+	const pauseBtn = document.getElementById('carousel-pause');
+	const track = document.getElementById('carousel-track');
+	
+	if (pauseBtn && track) {
+		pauseBtn.addEventListener('click', () => {
+			track.classList.toggle('paused');
+			const pauseIcon = pauseBtn.querySelector('.pause-icon') as HTMLElement;
+			const playIcon = pauseBtn.querySelector('.play-icon') as HTMLElement;
+			
+			if (track.classList.contains('paused')) {
+				if (pauseIcon) pauseIcon.style.display = 'none';
+				if (playIcon) playIcon.style.display = 'inline';
+			} else {
+				if (pauseIcon) pauseIcon.style.display = 'inline';
+				if (playIcon) playIcon.style.display = 'none';
+			}
+		});
+	}
+</script>
